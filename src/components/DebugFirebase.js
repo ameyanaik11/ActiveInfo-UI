@@ -9,6 +9,7 @@ const StyledParagraph = styled.p`
   border-bottom: solid;
   font-size: small;
   font-style: italic;
+  text-align: center;
 `;
 
 const DebugFirebase = React.memo(({ data }) => {

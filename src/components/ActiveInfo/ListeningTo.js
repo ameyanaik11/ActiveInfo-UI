@@ -1,12 +1,15 @@
 import Moment from "react-moment";
 import React from "react";
+import styled from "styled-components";
+
+const Line = styled.section``;
 
 const ListeningTo = ({ albumName, artistName, songName, timestamp }) => (
   <React.Fragment>
-    <p>Album: {albumName}</p>
-    <p>Artist: {artistName}</p>
-    <p>Song: {songName}</p>
-    <p>
+    <Line>Album: {albumName}</Line>
+    <Line>Artist: {artistName}</Line>
+    <Line>Song: {songName}</Line>
+    <Line>
       <a
         href={`https://www.youtube.com/results?search_query=${encodeURI(
           songName
@@ -15,7 +18,7 @@ const ListeningTo = ({ albumName, artistName, songName, timestamp }) => (
       >
         Play on Youtube
       </a>
-    </p>
+    </Line>
   </React.Fragment>
 );
 
