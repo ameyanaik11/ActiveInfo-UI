@@ -1,8 +1,6 @@
 import ActiveInfo from "./components/ActiveInfo";
 import { activeInfoRef } from "./config/firebase";
-import ApiKey from "./components/ApiKey";
-import moment from "moment";
-import Moment from "react-moment";
+import DebugFirebase from "./components/DebugFirebase";
 import React from "react";
 import ReactDOM from "react-dom";
 
@@ -12,26 +10,23 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      activeInfo: undefined,
-      lastUpdated: moment()
+      activeInfo: undefined
     };
   }
 
   componentDidMount() {
     activeInfoRef.on("value", snapshot => {
       this.setState({
-        activeInfo: snapshot.val(),
-        lastUpdated: moment()
+        activeInfo: snapshot.val()
       });
     });
   }
 
   render() {
-    const { activeInfo, lastUpdated } = this.state;
+    const { activeInfo } = this.state;
     return (
       <div className="App">
-        Last updated: <Moment date={lastUpdated} fromNow interval={30} />
-        <ApiKey />
+        <DebugFirebase data={activeInfo} />
         {activeInfo && <ActiveInfo activeInfo={activeInfo} />}
       </div>
     );

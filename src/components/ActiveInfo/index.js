@@ -14,7 +14,7 @@ const ActiveInfo = ({ activeInfo }) => {
 
   return (
     <Tabs
-      defaultActiveKey={recentTimestamp(devices)}
+      defaultActiveKey={deviceNameWithRecentTimestamp(devices)}
       id="uncontrolled-tab-example"
     >
       {_.keys(devices).map((deviceName, index) => {
@@ -29,7 +29,7 @@ const ActiveInfo = ({ activeInfo }) => {
         const likedYoutubeVideoUrl = _.at(device, "videoLike.url")[0];
 
         return (
-          <Tab eventKey={lastTimestamp} title={tabTitle(deviceName, device)}>
+          <Tab eventKey={deviceName} title={tabTitle(deviceName, device)}>
             {connection && <DeviceConnection {...connection} />}
             {lastKnownBattery && (
               <DeviceBattery {...{ lastKnownBattery, isCharging }} />
@@ -58,12 +58,14 @@ const recalculateLastTimestamp = device => {
   };
 };
 
-const recentTimestamp = devices =>
-  _.chain(devices)
+const deviceNameWithRecentTimestamp = devices => {
+  const recentTimestamp = _.chain(devices)
     .values()
     .map("lastTimestamp")
     .max()
     .value();
+  return _.findKey(devices, { lastTimestamp: recentTimestamp });
+};
 
 const tabTitle = (deviceName, device) => (
   <span>
