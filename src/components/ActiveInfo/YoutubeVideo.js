@@ -1,7 +1,18 @@
+import { Container } from "react-bootstrap";
 import React from "react";
+import styled from "styled-components";
 import YouTube from "react-youtube";
 
-const YoutubeVideo = ({ url }) => <YouTube videoId={getYoutubeVideoId(url)} />;
+const StyledContainer = styled(Container)`
+  border: dotted 1px;
+  text-align: center;
+`;
+
+const YoutubeVideo = ({ url }) => (
+  <StyledContainer>
+    <YouTube videoId={getYoutubeVideoId(url)} />
+  </StyledContainer>
+);
 
 /* Helper */
 const getYoutubeVideoId = url => {

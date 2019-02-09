@@ -1,10 +1,13 @@
 import React from "react";
+import { Container, Row } from "react-bootstrap";
 
 const DeviceBattery = ({ lastKnownBattery, isCharging }) => (
-  <p>
-    Battery: {lastKnownBattery} (
-    {isCharging === true ? "Charging" : "Unplugged"})
-  </p>
+  <Container>
+    <Row>
+      Battery: {lastKnownBattery} (
+      {isCharging === true ? "Charging" : "Unplugged"})
+    </Row>
+  </Container>
 );
 
 export default DeviceBattery;

@@ -1,9 +1,10 @@
 import ActiveInfo from "./components/ActiveInfo";
 import { activeInfoRef } from "./config/firebase";
 import DebugFirebase from "./components/DebugFirebase";
+import { fab } from "@fortawesome/free-brands-svg-icons";
+import { library } from "@fortawesome/fontawesome-svg-core";
 import React from "react";
 import ReactDOM from "react-dom";
-
 import "./styles.css";
 
 class App extends React.Component {
@@ -20,6 +21,8 @@ class App extends React.Component {
         activeInfo: snapshot.val()
       });
     });
+
+    library.add(fab);
   }
 
   render() {
