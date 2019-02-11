@@ -19,7 +19,6 @@ const Timestamp = styled.section`
 
 const ActiveInfo = ({ activeInfo }) => {
   const devices = _.mapValues(activeInfo.devices, recalculateLastTimestamp);
-
   return (
     <Tabs
       defaultActiveKey={deviceNameWithRecentTimestamp(devices)}
@@ -32,7 +31,8 @@ const ActiveInfo = ({ activeInfo }) => {
           isCharging,
           lastKnownBattery,
           lastTimestamp,
-          listeningTo
+          listeningTo,
+          myChevrolet
         } = device;
         const likedYoutubeVideoUrl = _.at(device, "videoLike.url")[0];
 
@@ -47,6 +47,7 @@ const ActiveInfo = ({ activeInfo }) => {
                 <YoutubeVideo url={likedYoutubeVideoUrl} />
               )}
               {listeningTo && <ListeningTo {...listeningTo} />}
+              {myChevrolet && <pre>{JSON.stringify(myChevrolet, 2, 2)}</pre>}
               {lastTimestamp && (
                 <Timestamp>Last updated: {lastTimestamp.toString()}</Timestamp>
               )}

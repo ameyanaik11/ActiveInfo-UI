@@ -11,5 +11,6 @@ const databaseRef = firebase.database().ref();
 export const activeInfoRef = databaseRef.child("public/activeInfo");
 export const homepageStatsRef = databaseRef.child("public/homepageStats");
 export const projectsRef = databaseRef.child("public/projects");
+
 export const authRef = firebase.auth();
 export const provider = new firebase.auth.GoogleAuthProvider();

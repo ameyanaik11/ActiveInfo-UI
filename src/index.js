@@ -30,7 +30,7 @@ class App extends React.Component {
     return (
       <div className="App">
         <DebugFirebase data={activeInfo} />
-        {activeInfo && <ActiveInfo activeInfo={activeInfo} />}
+        {activeInfo && <ActiveInfo {...{ activeInfo }} />}
       </div>
     );
   }
