@@ -1,5 +1,3 @@
-import Moment from "react-moment";
-import FontAwesome from "react-fontawesome";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React from "react";
 import styled from "styled-components";
@@ -29,6 +27,7 @@ const ListeningTo = ({ albumName, artistName, songName, timestamp }) => (
             songName
           )}`}
           target="_blank"
+          rel="noopener noreferrer"
         >
           <Row>
             <FontAwesomeIcon icon={["fab", "youtube"]} size="3x" />
