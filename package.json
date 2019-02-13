@@ -1,7 +1,8 @@
 {
-  "name": "ameyanaik-test",
-  "version": "1.0.0",
-  "description": "",
+  "name": "@ameyanaik/active-info",
+  "version": "1.0.1",
+  "description": "AmeyaNaik.com | Active Info",
+  "homepage": "https://ameyanaik.com",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
@@ -37,5 +38,9 @@
   "publishConfig": {
     "access": "public",
     "registry": "https://registry.npmjs.org"
+  },
+  "repository": {
+    "type" : "git",
+    "url" : "https://github.com/ameyanaik11/ActiveInfo-UI.git"
   }
 }
