@@ -11,10 +11,10 @@ before_deploy:
 deploy:
   - provider: npm
     email: "ameya.n2007@gmail.com"
-    api_key: "yNbw6Q/5MeTa51tLVrIIiwm81kqNtmivVALsCY3SjmHq340tVOn0irXEbut/Dqu1SwhDC5CwqCCrmA/djoY1fCn+OmPrRpDQvIGmlKqFI23di6igoA+qofUIMixiRKekItRDyAUoIQ3URfQ01zVC0R5H5JK1V0EO25Lwzlt6uxEQ01YJdPQoVmEfhPBnqc9r5GvFKjXuq7SER9G6JrEDHvO/BOwHPhBo4RJdpXOSIi23cfRV2hv0m8hiCyyYTBuHCmtIlP/on2o7amiCg+akJ+xS2HguU58+4fYfJIl54uDDKh6YsluEQkez/halNdCN4mQkVFCQC72I2AhmBmuResJHIyV9bd+eF0/Win7RLC2Wq031pxrpINm7XuX4pMo1U8zt1xa22KeQs6xXG9mqazW9b2mFPz0lTHs7+FSCwQFFoF8dTBTeODOud5LEFU1OF7UbiqiIEUkGCqOR9lBHyycugP/BXgW3HFFwrrgLrszy+sjecFJflr8+k7+hLT+3Xr27ffNuBjO7XzAX3nZWntjqtwRC613i4PsYMQEMVMBFMvBXMFr4u341+Go4qaEY7qxubwAbdiAcEhmpESeraGkw9C9PenOL/Gx5JZs8OgXYrrLDZjysL+1KAZxz2GsqnqCwCCpRr2a/+55latCFW5qYUefODX46dfT2cs+KtNU="
+    api_key: $NPM_TOKEN
     skip_cleanup: true
     on:
-      all_branches: true
+      branch: master
   - provider: pages
     skip-cleanup: true
     github-token: $GITHUB_TOKEN
