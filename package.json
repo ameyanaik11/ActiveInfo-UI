@@ -2,7 +2,7 @@
   "name": "@ameyanaik/active-info",
   "version": "1.0.3",
   "description": "AmeyaNaik.com | Active Info",
-  "homepage": "https://ameyanaik.com",
+  "homepage": "https://ameyanaik11.github.io/ActiveInfo-UI/",
   "keywords": [],
   "main": "src/index.js",
   "dependencies": {
@@ -11,6 +11,7 @@
     "@fortawesome/react-fontawesome": "0.1.4",
     "bootstrap": "4.2.1",
     "firebase": "5.8.2",
+    "gh-pages": "^2.0.1",
     "lodash": "4.17.11",
     "moment": "^2.24.0",
     "react": "16.8.0",
@@ -27,7 +28,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "browserslist": [
     ">0.2%",

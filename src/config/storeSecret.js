@@ -1,6 +1,7 @@
-export const FIREBASE_API_KEY = "firebase_api_key";
+const FIREBASE_API_KEY = "firebase_api_key";
 
-export const getFirebaseApiKey = () => {
+// eslint-disable-next-line
+const getFirebaseApiKeyFromStorage = () => {
   const cachedApiKey = localStorage.getItem(FIREBASE_API_KEY);
   if (!cachedApiKey) {
     const apiKey = prompt("Please provide API Key for Firebase");
@@ -12,3 +13,7 @@ export const getFirebaseApiKey = () => {
   }
   return cachedApiKey;
 };
+
+const publicFirebaseApiKey = () => "AIzaSyD-xTs_FdAUP4c6CDyAVjwSp_a8r1VLt1g";
+
+export const getFirebaseApiKey = publicFirebaseApiKey;
