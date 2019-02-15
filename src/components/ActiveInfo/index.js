@@ -37,7 +37,7 @@ const ActiveInfo = ({ activeInfo }) => {
         const likedYoutubeVideoUrl = _.at(device, "videoLike.url")[0];
 
         return (
-          <Tab eventKey={deviceName} title={tabTitle(deviceName, device)}>
+          <Tab eventKey={deviceName} key={deviceName} title={tabTitle(deviceName, device)}>
             <Container>
               {connection && <DeviceConnection {...connection} />}
               {lastKnownBattery && (
