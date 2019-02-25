@@ -16,7 +16,7 @@ const DebugFirebase = React.memo(({ data }) => {
   const lastUpdated = moment.now();
   return (
     <StyledParagraph>
-      API Key: {getFirebaseApiKey()}
+      Firebase API Key: {getFirebaseApiKey()}
       <br />
       Data last updated: <Moment date={lastUpdated} fromNow />
     </StyledParagraph>
